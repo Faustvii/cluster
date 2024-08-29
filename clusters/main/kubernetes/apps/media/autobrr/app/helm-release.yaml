@@ -30,9 +30,7 @@ spec:
     keepHistory: false
   values:
     persistence:
-      enabled: false
-    volumes:
-      autobrr-config:
+      config:
         type: EmptyDir
         medium: Memory
         sizeLimit: 8Gi
