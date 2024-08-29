@@ -80,8 +80,6 @@ spec:
             middlewares:
               - name: local
                 namespace: traefik
-              - name: bouncer
-                namespace: traefik
           certManager:
             enabled: true
             certificateIssuer: selfsigned
