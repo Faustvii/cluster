@@ -1,0 +1,43 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "docker:enableMajor",
+    "replacements:k8s-registry-move",
+    ":automergeBranch",
+    ":disableRateLimiting",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":skipStatusChecks",
+    ":timezone(Europe/Amsterdam)",
+    "./renovate/allowedVersions.json5",
+    "./renovate/autoMerge.json5",
+    "./renovate/clusters.json5",
+    "./renovate/commitMessage.json5",
+    "./renovate/groups.json5",
+    "./renovate/labels.json5",
+    "./renovate/packageRules.json5",
+    "./renovate/semanticCommits.json5"
+  ],
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
+  "ignorePaths": ["**/*.sops.*", "**/.archive/**", "**/resources/**"],
+  "flux": {
+    "fileMatch": [
+      "(^|/)clusters/.+\\.ya?ml(?:\\.j2)?$",
+      "(^|/)repositories/.+\\.ya?ml(?:\\.j2)?$"
+    ]
+  },
+  "helm-values": {
+    "fileMatch": [
+      "(^|/)clusters/.+\\.ya?ml(?:\\.j2)?$",
+      "(^|/)repositories/.+\\.ya?ml(?:\\.j2)?$"
+    ]
+  },
+  "kubernetes": {
+    "fileMatch": [
+      "(^|/)clusters/.+\\.ya?ml(?:\\.j2)?$",
+      "(^|/)repositories/.+\\.ya?ml(?:\\.j2)?$"
+    ]
+  }
+}
