@@ -7,3 +7,4 @@ resources:
   - intel.yaml
   - topolvm.yaml
   - cilium.yaml
+  - weave-gitops.yaml

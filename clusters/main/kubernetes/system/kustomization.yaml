@@ -12,6 +12,6 @@ resources:
   - openebs/ks.yaml
   - prometheus-operator/ks.yaml
   - snapshot-controller/ks.yaml
-  - topolvm/ks.yaml
   - traefik-crds/ks.yaml
   - volsync/ks.yaml
+  - topolvm/ks.yaml
