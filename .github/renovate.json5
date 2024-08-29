@@ -10,7 +10,7 @@
     ":semanticCommits",
     ":skipStatusChecks",
     ":timezone(Europe/Amsterdam)",
-    "./renovate/allowedVersions.json5",
+    ".github/renovate/allowedVersions.json5",
     "./renovate/autoMerge.json5",
     "./renovate/clusters.json5",
     "./renovate/commitMessage.json5",
