@@ -31,9 +31,7 @@ spec:
   values:
     persistence:
       config:
-        type: EmptyDir
-        medium: Memory
-        sizeLimit: 8Gi
+        type: emptyDir
     ingress:
       main:
         enabled: true
