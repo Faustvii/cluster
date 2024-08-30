@@ -29,10 +29,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    securityContext:
-      privileged: true
-      readOnlyRootFilesystem: false
-
     plex:
       # User Defined
       serverIP: ${PLEX_IP}
@@ -66,18 +62,18 @@ spec:
       config:
         type: emptyDir
       media:
-        enabled: true
+        enabled: false
         existingClaim: media-nfs-pvc
         mountPath: "/media"
       series:
-        enabled: true
+        enabled: false
         existingClaim: media-series-nfs-pvc
         mountPath: "/media/series"
       movies:
-        enabled: true
+        enabled: false
         existingClaim: media-movies-nfs-pvc
         mountPath: "/media/movies"
       anime:
-        enabled: true
+        enabled: false
         existingClaim: media-anime-nfs-pvc
         mountPath: "/media/anime"
