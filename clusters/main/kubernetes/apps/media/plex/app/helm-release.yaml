@@ -29,6 +29,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    securityContext:
+      readOnlyRootFilesystem: false
 
     plex:
       # User Defined
@@ -36,8 +38,6 @@ spec:
       additionalAdvertiseURL: ${PLEX_ADVERTISE_URL}
       disableGDM: true
       requireHTTPS: false
-      securityContext:
-        readOnlyRootFilesystem: false
 
     service:
       main:
