@@ -137,10 +137,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: media-anime-nfs-pvc
+  name: media-books-nfs-pvc
   namespace: media
 spec:
-  storageClassName: media-anime-nfs
+  storageClassName: media-books-nfs
   accessModes:
     - ReadWriteMany
   resources:
