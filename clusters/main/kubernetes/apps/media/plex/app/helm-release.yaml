@@ -29,6 +29,10 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    securityContext:
+      privileged: true
+      readOnlyRootFilesystem: false
+
     plex:
       # User Defined
       serverIP: ${PLEX_IP}
