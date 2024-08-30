@@ -19,6 +19,7 @@ spec:
     - tcp
     - intr
     - hard
+    - noresvport
     - noatime
     - nodiratime
     - nolock
@@ -56,6 +57,7 @@ spec:
     - tcp
     - intr
     - hard
+    - noresvport
     - noatime
     - nodiratime
     - nolock
@@ -93,6 +95,7 @@ spec:
     - tcp
     - intr
     - hard
+    - noresvport
     - noatime
     - nodiratime
     - nolock
@@ -130,6 +133,7 @@ spec:
     - tcp
     - intr
     - hard
+    - noresvport
     - noatime
     - nodiratime
     - nolock
@@ -167,6 +171,7 @@ spec:
     - tcp
     - intr
     - hard
+    - noresvport
     - noatime
     - nodiratime
     - nolock
