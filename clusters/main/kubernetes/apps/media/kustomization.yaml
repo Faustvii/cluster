@@ -5,3 +5,4 @@ resources:
   - downloads-nfs-pvc.yaml
   - media-nfs-pvc.yaml
   - autobrr/ks.yaml
+  - plex/ks.yaml
