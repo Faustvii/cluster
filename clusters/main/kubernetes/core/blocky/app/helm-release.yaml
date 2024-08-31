@@ -97,6 +97,8 @@ spec:
       # -- list of processed domains
       domains:
       - domain: ${BASE_DOMAIN}
+        dnsChallenge:
+          enabled: false
 
       # forward:
       #   enabled: false
