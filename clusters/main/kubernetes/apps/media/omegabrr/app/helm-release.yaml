@@ -33,17 +33,12 @@ spec:
       repository: ghcr.io/autobrr/omegabrr
       tag: v1.12.1
       pullPolicy: IfNotPresent
-    ingress:
-      main:
-        enabled: false
-
     service:
       main:
         type: ClusterIP
         ports:
           main:
             port: 80
-
     persistence:
       config:
         enabled: true
