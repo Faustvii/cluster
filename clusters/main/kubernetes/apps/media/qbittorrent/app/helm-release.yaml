@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: qbittorrent
-      version: 21.1.7
+      version: 21.1.6
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -54,6 +54,9 @@ spec:
           certManager:
             enabled: true
             certificateIssuer: selfsigned
+          homepage:
+            enabled: true
+            widget:
         hosts:
           - host: torrent.${BASE_DOMAIN}
             paths:
