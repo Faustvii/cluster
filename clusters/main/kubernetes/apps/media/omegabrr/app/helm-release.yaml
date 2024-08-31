@@ -44,16 +44,11 @@ spec:
           main:
             port: 80
 
-    workload:
-      main:
-        podSpec:
-          containers:
-            volumeMounts:
-              - name: config
-                mountPath: /config
-    volumes:
-      - name: config
+    persistence:
+      config:
+        enabled: true
         type: emptyDir
+        mountPath: /config
 
     # persistence:
     #   config:
