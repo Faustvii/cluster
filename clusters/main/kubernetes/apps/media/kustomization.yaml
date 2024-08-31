@@ -8,3 +8,12 @@ resources:
   - plex/ks.yaml
   - qbittorrent/ks.yaml
   - radarr/ks.yaml
+  - bazarr/ks.yaml
+  - flaresolverr/ks.yaml
+  - overseerr/ks.yaml
+  - prowlarr/ks.yaml
+  - readarr/ks.yaml
+  - recyclarr/ks.yaml
+  - sonarr/ks.yaml
+  - tautulli/ks.yaml
+  - unpackerr/ks.yaml
