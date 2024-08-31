@@ -30,18 +30,18 @@ spec:
   values:
     ingress:
       main:
-      enabled: true
-      integrations:
-        traefik:
-          enabled: true
-          middlewares:
-            - name: local
-              namespace: traefik
-        certManager:
-          enabled: true
-          certificateIssuer: selfsigned
-      hosts:
-        - host: home.${BASE_DOMAIN}
-          paths:
-            - path: /
-              pathType: Prefix
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+              - name: local
+                namespace: traefik
+          certManager:
+            enabled: true
+            certificateIssuer: selfsigned
+        hosts:
+          - host: home.${BASE_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
