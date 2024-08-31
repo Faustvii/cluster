@@ -5,14 +5,14 @@ name: "Tests"
 on:
   pull_request:
     branches: ["main"]
-    # paths: ["cluster/**"]
+    paths: ["clusters/**"]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
   cancel-in-progress: true
 
 env:
-  KUBERNETES_DIR: ./cluster
+  KUBERNETES_DIR: ./clusters/main/kubernetes
 
 jobs:
   kubeconform:
@@ -41,7 +41,7 @@ jobs:
       pull-requests: write
     strategy:
       matrix:
-        paths: ["cluster"]
+        paths: ["clusters"]
         resources: ["kustomization"]
     steps:
       - name: Checkout
