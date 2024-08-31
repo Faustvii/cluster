@@ -28,6 +28,10 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    persistence:
+      config:
+        type: emptyDir
+
     ingress:
       main:
         enabled: true
