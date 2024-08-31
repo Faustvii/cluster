@@ -37,6 +37,11 @@ spec:
     #     accessKey: "${S3ID}"
     #     secretKey: "${S3KEY}"
     #     encrKey: "${S3KEY}"
+    persistence:
+      pgdata:
+        type: emptyDir
+      pg-wal:
+        type: emptyDir
     service:
       dns:
         externalTrafficPolicy: Local
