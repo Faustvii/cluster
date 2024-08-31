@@ -36,6 +36,13 @@ spec:
     ingress:
       main:
         enabled: false
+
+    service:
+      main:
+        type: ClusterIP
+        ports:
+          main:
+            port: 80
     # persistence:
     #   config:
     #     type: emptyDir
