@@ -67,14 +67,14 @@ spec:
         existingClaim: media-nfs-pvc
         mountPath: "/media"
       series:
-        enabled: false
+        enabled: true
         existingClaim: media-series-nfs-pvc
         mountPath: "/media/series"
       movies:
-        enabled: false
+        enabled: true
         existingClaim: media-movies-nfs-pvc
         mountPath: "/media/movies"
       anime:
-        enabled: false
+        enabled: true
         existingClaim: media-anime-nfs-pvc
         mountPath: "/media/anime"
