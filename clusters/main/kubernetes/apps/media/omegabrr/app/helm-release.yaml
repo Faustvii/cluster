@@ -43,8 +43,13 @@ spec:
         ports:
           main:
             port: 80
+    volumes:
+      - name: config
+        type: emptyDir
+
+    # volumeMounts:
+    #   - name: config
+    #     mountPath: /config
     persistence:
       config:
-        enabled: true
         mountPath: /config
-        type: emptyDir
