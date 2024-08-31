@@ -29,14 +29,6 @@ spec:
   uninstall:
     keepHistory: false
 
-workload:
-  main:
-    podSpec:
-      containers:
-        main:
-          env:
-            ENV2: "value2"
-
   values:
     env:
       ENV1: "value1"
