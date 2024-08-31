@@ -4,4 +4,3 @@ resources:
   - metallb-config/ks.yaml
   - clusterissuer/ks.yaml
   - traefik/ks.yaml
-  - blocky/ks.yaml
