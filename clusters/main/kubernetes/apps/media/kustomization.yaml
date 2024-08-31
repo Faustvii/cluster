@@ -6,3 +6,4 @@ resources:
   - media-nfs-pvc.yaml
   - autobrr/ks.yaml
   - plex/ks.yaml
+  - qbittorrent/ks.yaml
