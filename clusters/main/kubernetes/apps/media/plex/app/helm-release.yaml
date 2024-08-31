@@ -66,7 +66,7 @@ spec:
       config:
         type: emptyDir
       media:
-        enabled: false
+        enabled: true
         existingClaim: media-nfs-pvc
         mountPath: "/media"
       series:
