@@ -8,3 +8,4 @@ resources:
   - flux-system
   - kube-system
   - system
+  - .pytest_cache
