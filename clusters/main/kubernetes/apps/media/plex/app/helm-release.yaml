@@ -63,7 +63,7 @@ spec:
       config:
         type: emptyDir
       media:
-        enabled: false
+        enabled: true
         existingClaim: media-nfs-pvc
         mountPath: "/media"
       series:
@@ -75,6 +75,6 @@ spec:
         existingClaim: media-movies-nfs-pvc
         mountPath: "/media/movies"
       anime:
-        enabled: true
+        enabled: false
         existingClaim: media-anime-nfs-pvc
         mountPath: "/media/anime"
