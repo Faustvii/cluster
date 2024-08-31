@@ -29,8 +29,10 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    image: "ghcr.io/autobrr/omegabrr:v1.12.1"
-    imagePullPolicy: "IfNotPresent"
-    persistence:
-      config:
-        type: emptyDir
+    image:
+      repository: ghcr.io/autobrr/omegabrr
+      tag: v1.12.1
+      pullPolicy: IfNotPresent
+    # persistence:
+    #   config:
+    #     type: emptyDir
