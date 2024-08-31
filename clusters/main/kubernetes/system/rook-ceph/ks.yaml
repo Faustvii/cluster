@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: clusters/main/kubernetes/core/rook-ceph/app
+  path: clusters/main/kubernetes/system/rook-ceph/app
   prune: true
   sourceRef:
     kind: GitRepository
