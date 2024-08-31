@@ -74,7 +74,7 @@ spec:
       #   enabled: false
       #   existingClaim: media-movies-nfs-pvc
       #   mountPath: "/media/movies"
-      # anime:
-      #   enabled: false
-      #   existingClaim: media-anime-nfs-pvc
-      #   mountPath: "/media/anime"
+      anime:
+        enabled: true
+        existingClaim: media-anime-nfs-pvc
+        mountPath: "/media/anime"
