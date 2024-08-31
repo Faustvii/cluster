@@ -107,11 +107,11 @@ spec:
       #   options:
       #     - name: tls_servername
       #       value: cloudflare-dns.com
-    # cnpg:
-    #   main:
-    #     backups:
-    #       enabled: true
-    #       credentials: s3
-    #     recovery:
-    #       method: object_store
-    #       credentials: s3
+    cnpg:
+      main:
+        backups:
+          enabled: true
+          # credentials: s3
+        recovery:
+          method: object_store
+          # credentials: s3
