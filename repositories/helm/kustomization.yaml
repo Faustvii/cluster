@@ -8,3 +8,4 @@ resources:
   - topolvm.yaml
   - cilium.yaml
   - weave-gitops.yaml
+  - rook-ceph.yaml
