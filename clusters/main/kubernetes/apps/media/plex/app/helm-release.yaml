@@ -62,8 +62,19 @@ spec:
     persistence:
       config:
         type: emptyDir
-      media:
+      # media:
+      #   enabled: true
+      #   existingClaim: media-nfs-pvc
+      #   mountPath: "/media"
+      series:
         enabled: true
-        existingClaim: media-nfs-pvc
-        mountPath: "/media"
-
+        existingClaim: media-series-nfs-pvc
+        mountPath: "/media/series"
+      # movies:
+      #   enabled: false
+      #   existingClaim: media-movies-nfs-pvc
+      #   mountPath: "/media/movies"
+      # anime:
+      #   enabled: false
+      #   existingClaim: media-anime-nfs-pvc
+      #   mountPath: "/media/anime"
