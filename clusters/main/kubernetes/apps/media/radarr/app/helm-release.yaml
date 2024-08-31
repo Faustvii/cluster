@@ -3,14 +3,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: qbittorrent
+  name: radarr
   namespace: media
 spec:
   interval: 15m
   chart:
     spec:
-      chart: qbittorrent
-      version: 21.1.6
+      chart: radarr
+      version: 23.4.1
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -28,20 +28,14 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-
   values:
-    workload:
+    metrics:
       main:
-        podSpec:
-          containers:
-            main:
-              env:
-                QBT_Preferences__WebUI__AuthSubnetWhitelist: "192.168.0.0/16, 172.16.0.0/12"
-                QBT_Preferences__WebUI__AuthSubnetWhitelistEnabled: "true"
-    
-    # service:
-    #   torrent:
-    #     loadBalancerIP: ${TORRENT_IP}
+        enabled: false
+    workload:
+      exportarr:
+        enabled: false
+
     ingress:
       main:
         enabled: true
@@ -55,14 +49,23 @@ spec:
             enabled: true
             certificateIssuer: selfsigned
         hosts:
-          - host: torrent.${BASE_DOMAIN}
+          - host: radarr.${BASE_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
     persistence:
       config:
         type: emptyDir
+      movies:
+        enabled: true
+        existingClaim: media-movies-nfs-pvc
+        mountPath: "/media/movies"
       downloads:
         enabled: true
         existingClaim: downloads-nfs-pvc
         mountPath: "/downloads"
+      # backup:
+      #   enabled: true
+      #   existingClaim: media-backups-pvc
+      #   mountPath: /config/Backups
+      #   readOnly: false
