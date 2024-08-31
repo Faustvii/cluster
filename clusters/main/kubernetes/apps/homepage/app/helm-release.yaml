@@ -28,8 +28,8 @@ spec:
   uninstall:
     keepHistory: false
   values:
-  main:
     ingress:
+      main:
       enabled: true
       integrations:
         traefik:
