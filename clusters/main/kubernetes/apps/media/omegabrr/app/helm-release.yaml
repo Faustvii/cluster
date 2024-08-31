@@ -33,12 +33,6 @@ spec:
       repository: ghcr.io/autobrr/omegabrr
       tag: v1.12.1
       pullPolicy: IfNotPresent
-    service:
-      main:
-        ports:
-          - port: 8080
-            targetPort: 8080
-            protocol: TCP
     ingress:
       main:
         enabled: false
