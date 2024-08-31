@@ -28,17 +28,29 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+
+workload:
+  main:
+    podSpec:
+      containers:
+        main:
+          env:
+            ENV2: "value2"
+
   values:
+    env:
+      ENV1: "value1"
+
     workload:
       main:
         podSpec:
           containers:
             main:
               env:
-                - name: QBT_Preferences__WebUI__AuthSubnetWhitelist
-                  value: "192.168.0.0/16, 172.16.0.0/12"
-                - name: QBT_Preferences__WebUI__AuthSubnetWhitelistEnabled
-                  value: "true"
+                ENV_NAME1: ENV_VALUE
+                QBT_Preferences__WebUI__AuthSubnetWhitelist: "192.168.0.0/16, 172.16.0.0/12"
+                QBT_Preferences__WebUI__AuthSubnetWhitelistEnabled: "true"
+    
     # service:
     #   torrent:
     #     loadBalancerIP: ${TORRENT_IP}
