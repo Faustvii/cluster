@@ -42,7 +42,7 @@ spec:
     persistence:
       config:
         enabled: true
-        type: emptyDir
+        # type: emptyDir
         mountPath: /config
 
     # persistence:
