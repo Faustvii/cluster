@@ -64,6 +64,9 @@ spec:
     addons:
       vpn:
         type: gluetun
+        inputPorts:
+          - 10095
+          - 8000
         excludedNetworks_IPv4:
           - "192.168.0.0/16"
         env:
@@ -74,7 +77,7 @@ spec:
           WIREGUARD_ADDRESSES: ${WIREGUARD_ADDRESSES}
           FIREWALL_VPN_INPUT_PORTS: ${FIREWALL_VPN_INPUT_PORTS}
           SERVER_COUNTRIES: ${SERVER_COUNTRIES}
-          VPN_PORT_FORWARDING: "on"
+
 
     qbitportforward:
       enabled: true
