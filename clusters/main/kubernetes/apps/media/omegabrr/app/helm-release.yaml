@@ -33,6 +33,16 @@ spec:
       repository: ghcr.io/autobrr/omegabrr
       tag: v1.14.0
       pullPolicy: IfNotPresent
+    
+      credentials:
+        s3:
+          type: s3
+          url: "${S3URL}"
+          bucket: "${S3PREFIX}-omegabrr"
+          accessKey: "${S3ID}"
+          secretKey: "${S3KEY}"
+          encrKey: "${S3KEY}"
+    
     workload:
       main:
         podSpec:
@@ -57,9 +67,15 @@ spec:
     persistence:
       config:
         enabled: true
-        # type: emptyDir
-        # medium: Memory
         mountPath: /config
+        volsync:
+          - name: backup
+            type: restic
+            credentials: s3
+            dest:
+              enabled: true
+            src:
+              enabled: true
 
     # persistence:
     #   config:
