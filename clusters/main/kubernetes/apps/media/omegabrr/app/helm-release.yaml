@@ -66,6 +66,7 @@ spec:
             port: 7441
     persistence:
       config:
+        storageClass: topolvm-provisioner
         enabled: true
         mountPath: /config
         volsync:
