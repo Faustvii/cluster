@@ -81,4 +81,5 @@ spec:
       downloads:
         enabled: true
         existingClaim: downloads-nfs-pvc
+        namespace: media
         mountPath: "/downloads"
