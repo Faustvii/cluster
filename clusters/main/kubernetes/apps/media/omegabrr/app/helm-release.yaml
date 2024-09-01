@@ -33,6 +33,20 @@ spec:
       repository: ghcr.io/autobrr/omegabrr
       tag: v1.14.0
       pullPolicy: IfNotPresent
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              probes:
+                readiness:
+                  enabled: false
+                liveness:
+                  enabled: false
+                startup:
+                  enabled: false
+
+
     service:
       main:
         type: ClusterIP
