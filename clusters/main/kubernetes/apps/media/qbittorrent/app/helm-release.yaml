@@ -65,7 +65,7 @@ spec:
       vpn:
         type: gluetun
         excludedNetworks_IPv4:
-          - "172.16.0.0/12,192.168.0.0/16,10.1.1.1/32"
+          - "192.168.0.0/16"
         env:
           VPN_TYPE: "wireguard"
           VPN_SERVICE_PROVIDER: ${VPN_SERVICE_PROVIDER}
@@ -74,6 +74,7 @@ spec:
           WIREGUARD_ADDRESSES: ${WIREGUARD_ADDRESSES}
           FIREWALL_VPN_INPUT_PORTS: ${FIREWALL_VPN_INPUT_PORTS}
           SERVER_COUNTRIES: ${SERVER_COUNTRIES}
+          VPN_PORT_FORWARDING: "on"
 
     qbitportforward:
       enabled: true
