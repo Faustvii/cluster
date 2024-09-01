@@ -38,7 +38,7 @@ spec:
               env:
                 QBT_Preferences__WebUI__AuthSubnetWhitelist: "192.168.0.0/16, 172.16.0.0/12"
                 QBT_Preferences__WebUI__AuthSubnetWhitelistEnabled: "true"
-    
+
     # service:
     #   torrent:
     #     loadBalancerIP: ${TORRENT_IP}
@@ -61,6 +61,20 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+    addons:
+      vpn:
+        type: gluetun
+        excludedNetworks_IPv4:
+          - "172.16.0.0/12,192.168.0.0/16,10.1.1.1/32"
+        env:
+          VPN_TYPE: "wireguard"
+          VPN_SERVICE_PROVIDER: ${VPN_SERVICE_PROVIDER}
+          WIREGUARD_PRIVATE_KEY: ${WIREGUARD_PRIVATE_KEY}
+          WIREGUARD_PRESHARED_KEY: ${WIREGUARD_PRESHARED_KEY}
+          WIREGUARD_ADDRESSES: ${WIREGUARD_ADDRESSES}
+          FIREWALL_VPN_INPUT_PORTS: ${FIREWALL_VPN_INPUT_PORTS}
+          SERVER_COUNTRIES: ${SERVER_COUNTRIES}
+
     persistence:
       config:
         type: emptyDir
