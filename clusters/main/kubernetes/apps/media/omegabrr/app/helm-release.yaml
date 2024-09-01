@@ -38,7 +38,7 @@ spec:
         type: ClusterIP
         ports:
           main:
-            port: 80
+            port: 7441
     persistence:
       config:
         enabled: true
