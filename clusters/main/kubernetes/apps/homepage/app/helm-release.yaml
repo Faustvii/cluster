@@ -32,9 +32,6 @@ spec:
       config:
         type: emptyDir
         medium: Memory
-      homepage-config:
-        enabled: true
-        type: emptyDir
 
     ingress:
       main:
