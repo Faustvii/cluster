@@ -76,9 +76,6 @@ spec:
           SERVER_COUNTRIES: ${SERVER_COUNTRIES}
           FIREWALL_INPUT_PORTS: "10095,8000"
 
-    qbitportforward:
-      enabled: true
-
     persistence:
       config:
         type: emptyDir
