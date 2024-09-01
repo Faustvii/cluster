@@ -56,7 +56,6 @@ spec:
             certificateIssuer: selfsigned
           homepage:
             enabled: true
-            widget:
         hosts:
           - host: torrent.${BASE_DOMAIN}
             paths:
