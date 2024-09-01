@@ -75,6 +75,9 @@ spec:
           FIREWALL_VPN_INPUT_PORTS: ${FIREWALL_VPN_INPUT_PORTS}
           SERVER_COUNTRIES: ${SERVER_COUNTRIES}
 
+    qbitportforward:
+      enabled: true
+
     persistence:
       config:
         type: emptyDir
