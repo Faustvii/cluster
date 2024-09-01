@@ -34,14 +34,14 @@ spec:
       tag: v1.14.0
       pullPolicy: IfNotPresent
     
-      credentials:
-        s3:
-          type: s3
-          url: "${S3URL}"
-          bucket: "${S3PREFIX}-omegabrr"
-          accessKey: "${S3ID}"
-          secretKey: "${S3KEY}"
-          encrKey: "${S3KEY}"
+    credentials:
+      s3:
+        type: s3
+        url: "${S3URL}"
+        bucket: "${S3PREFIX}-omegabrr"
+        accessKey: "${S3ID}"
+        secretKey: "${S3KEY}"
+        encrKey: "${S3KEY}"
     
     workload:
       main:
