@@ -42,8 +42,8 @@ spec:
     persistence:
       config:
         enabled: true
-        type: emptyDir
-        medium: Memory
+        # type: emptyDir
+        # medium: Memory
         mountPath: /config
 
     # persistence:
