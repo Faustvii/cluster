@@ -38,6 +38,7 @@ spec:
         type: ClusterIP
         ports:
           main:
+            protocol: http
             port: 7441
     persistence:
       config:
