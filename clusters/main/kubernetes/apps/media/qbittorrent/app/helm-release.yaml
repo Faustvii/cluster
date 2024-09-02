@@ -46,8 +46,7 @@ spec:
       main:
         enabled: true
         tls:
-          - secretName: wildcard
-            certificateIssuer: selfsigned
+          - clusterCertificate: wildcard
             hosts:
               - torrent.${BASE_DOMAIN}
         integrations:
