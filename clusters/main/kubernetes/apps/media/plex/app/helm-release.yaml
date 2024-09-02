@@ -29,7 +29,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
     plex:
       # User Defined
       serverIP: ${PLEX_IP}
@@ -45,20 +44,22 @@ spec:
     ingress:
       main:
         enabled: true
+        tls:
+          - clusterCertificate: wildcard
+            hosts:
+              - plex.${BASE_DOMAIN}
+        hosts:
+          - host: plex.${BASE_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
         integrations:
           traefik:
             enabled: true
             middlewares:
               - name: local
                 namespace: traefik
-          certManager:
-            enabled: true
-            certificateIssuer: selfsigned
-        hosts:
-          - host: plex.${BASE_DOMAIN}
-            paths:
-              - path: /
-                pathType: Prefix
+
     persistence:
       config:
         type: emptyDir

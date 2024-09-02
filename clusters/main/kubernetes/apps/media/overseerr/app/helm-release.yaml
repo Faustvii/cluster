@@ -33,20 +33,21 @@ spec:
     ingress:
       main:
         enabled: true
+        tls:
+          - clusterCertificate: wildcard
+            hosts:
+              - overseerr.${BASE_DOMAIN}
+        hosts:
+          - host: overseerr.${BASE_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
         integrations:
           traefik:
             enabled: true
             middlewares:
               - name: local
                 namespace: traefik
-          certManager:
-            enabled: true
-            certificateIssuer: selfsigned
-        hosts:
-          - host: overseerr.${BASE_DOMAIN}
-            paths:
-              - path: /
-                pathType: Prefix
     persistence:
       config:
         type: emptyDir

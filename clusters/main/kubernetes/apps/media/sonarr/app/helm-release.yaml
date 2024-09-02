@@ -40,20 +40,22 @@ spec:
     ingress:
       main:
         enabled: true
+        tls:
+          - clusterCertificate: wildcard
+            hosts:
+              - sonarr.${BASE_DOMAIN}
+        hosts:
+          - host: sonarr.${BASE_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
         integrations:
           traefik:
             enabled: true
             middlewares:
               - name: local
                 namespace: traefik
-          certManager:
-            enabled: true
-            certificateIssuer: selfsigned
-        hosts:
-          - host: sonarr.${BASE_DOMAIN}
-            paths:
-              - path: /
-                pathType: Prefix
+
     persistence:
       config:
         type: emptyDir

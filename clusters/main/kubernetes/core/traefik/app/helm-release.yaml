@@ -31,7 +31,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
     logs:
       general:
         # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
@@ -74,21 +73,22 @@ spec:
     ingress:
       main:
         enabled: false
+        tls:
+          - clusterCertificate: wildcard
+            hosts:
+              - traefik.${BASE_DOMAIN}
+        hosts:
+          - host: traefik.${BASE_DOMAIN}
+            paths:
+              - path: /
+                pathType: Prefix
         integrations:
           traefik:
             enabled: true
             middlewares:
               - name: local
                 namespace: traefik
-          certManager:
-            enabled: true
-            certificateIssuer: selfsigned
 
-        hosts:
-          - host: traefik.${BASE_DOMAIN}
-            paths:
-              - path: /
-                pathType: Prefix
     middlewares:
       ipWhiteList:
         - name: local
