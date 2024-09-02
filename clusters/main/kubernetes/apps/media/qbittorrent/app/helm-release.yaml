@@ -45,15 +45,20 @@ spec:
     ingress:
       main:
         enabled: true
+        tls:
+          - secretName: wildcard
+            certificateIssuer: selfsigned
+            hosts:
+              - torrent.${BASE_DOMAIN}
         integrations:
           traefik:
             enabled: true
             middlewares:
               - name: local
                 namespace: traefik
-          certManager:
-            enabled: true
-            certificateIssuer: selfsigned
+          # certManager:
+          #   enabled: true
+          #   certificateIssuer: selfsigned
           homepage:
             enabled: true
         hosts:
