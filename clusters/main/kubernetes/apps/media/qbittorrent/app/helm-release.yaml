@@ -80,7 +80,9 @@ spec:
     persistence:
       config:
         type: emptyDir
-      # downloads:
-      #   enabled: true
-      #   existingClaim: downloads-nfs-pvc
-      #   mountPath: "/downloads"
+      downloads:
+        enabled: true
+        mountPath: "/downloads"
+        type: nfs
+        path: ${NFS_PATH_DOWNLOADS}
+        server: ${NFS_SERVER_IP}
