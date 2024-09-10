@@ -68,14 +68,14 @@ spec:
       config:
         enabled: true
         mountPath: /config
-        # volsync:
-        #   - name: backup
-        #     type: restic
-        #     credentials: s3
-        #     dest:
-        #       enabled: true
-        #     src:
-        #       enabled: true
+        volsync:
+          - name: backup
+            type: restic
+            credentials: s3
+            dest:
+              enabled: true
+            src:
+              enabled: true
 
     # persistence:
     #   config:
