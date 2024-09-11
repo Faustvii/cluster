@@ -13,4 +13,5 @@ resources:
   - snapshot-controller/ks.yaml
   - traefik-crds/ks.yaml
   - volsync/ks.yaml
+  - rook-ceph/ks.yaml
   - namespace.yaml
