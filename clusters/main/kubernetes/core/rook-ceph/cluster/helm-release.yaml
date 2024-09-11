@@ -109,7 +109,9 @@ spec:
           nodes:
             - name: k8s-control-1
               config:
-                deviceClass: nvme
+                devices:
+                  - name: "sdb"
+                # deviceClass: nvme
                 osdsPerDevice: "1"
 
       ingress:
@@ -131,7 +133,7 @@ spec:
         - name: ceph-nvme
           spec:
             failureDomain: host
-            deviceClass: nvme
+            # deviceClass: nvme
             enableRBDStats: true
             replicated:
               size: 1
@@ -161,14 +163,14 @@ spec:
         - name: ceph-filesystem-nvme-1
           spec:
             metadataPool:
-              deviceClass: nvme
+              # deviceClass: nvme
               replicated:
                 size: 1
                 requireSafeReplicaSize: false
             dataPools:
               - failureDomain: host
                 name: data0
-                deviceClass: nvme
+                # deviceClass: nvme
                 replicated:
                   size: 1
                   requireSafeReplicaSize: false
