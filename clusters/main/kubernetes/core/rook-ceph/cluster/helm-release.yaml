@@ -108,10 +108,10 @@ spec:
           onlyApplyOSDPlacement: false
           nodes:
             - name: k8s-control-1
+              # deviceClass: nvme
+              devices:
+                - name: "sdb"
               config:
-                devices:
-                  - name: "sdb"
-                # deviceClass: nvme
                 osdsPerDevice: "1"
 
       ingress:
