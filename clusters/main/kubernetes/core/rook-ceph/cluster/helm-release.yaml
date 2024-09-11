@@ -109,8 +109,6 @@ spec:
           nodes:
             - name: k8s-control-1
               # deviceClass: nvme
-              devices:
-                - name: "sdb"
               config:
                 osdsPerDevice: "1"
 
