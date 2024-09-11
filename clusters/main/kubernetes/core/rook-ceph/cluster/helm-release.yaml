@@ -132,7 +132,7 @@ spec:
             deviceClass: nvme
             enableRBDStats: true
             replicated:
-              size: 3
+              size: 1
           storageClass:
             enabled: true
             name: ceph-nvme
@@ -156,18 +156,20 @@ spec:
         isDefault: true
         deletionPolicy: Delete
       cephFileSystems:
-        - name: ceph-filesystem-nvme-3
+        - name: ceph-filesystem-nvme-1
           spec:
             metadataPool:
               deviceClass: nvme
               replicated:
-                size: 3
+                size: 1
+                requireSafeReplicaSize: false
             dataPools:
               - failureDomain: host
                 name: data0
                 deviceClass: nvme
                 replicated:
-                  size: 3
+                  size: 1
+                  requireSafeReplicaSize: false
             metadataServer:
               activeCount: 1
               activeStandby: true
@@ -180,7 +182,7 @@ spec:
                     labelSelector:
                       matchLabels:
                         app.kubernetes.io/name: ceph-mds
-                        app.kubernetes.io/part-of: ceph-filesystem-nvme-3
+                        app.kubernetes.io/part-of: ceph-filesystem-nvme-1
               resources:
                 requests:
                   cpu: 100m
@@ -190,7 +192,7 @@ spec:
           storageClass:
             enabled: true
             isDefault: false
-            name: ceph-filesystem-nvme-3
+            name: ceph-filesystem-nvme-1
             reclaimPolicy: Delete
             allowVolumeExpansion: true
             pool: data0
