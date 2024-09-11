@@ -52,15 +52,15 @@ spec:
           mon:
             requests:
               cpu: 50m
-              memory: 512Mi
+              memory: 128Mi
             limits:
               memory: 1Gi
           osd:
             requests:
               cpu: 500m
-              memory: 2Gi
+              memory: 128Mi
             limits:
-              memory: 6Gi
+              memory: 2Gi
           prepareosd:
             limits:
               cpu: 100m
@@ -76,22 +76,22 @@ spec:
               memory: 256Mi
           crashcollector:
             requests:
-              cpu: "25m"
-              memory: "49M"
+              cpu: 25m
+              memory: 49Mi
             limits:
-              memory: "64M"
+              memory: 64Mi
           logcollector:
             requests:
-              cpu: "25m"
-              memory: "49M"
+              cpu: 25m
+              memory: 49Mi
             limits:
-              memory: "1G"
+              memory: 1Gi
           cleanup:
             requests:
-              cpu: "25m"
-              memory: "49M"
+              cpu: 25m
+              memory: 49Mi
             limits:
-              memory: "1G"
+              memory: 1Gi
 
         crashCollector:
           disable: false
@@ -188,7 +188,7 @@ spec:
               resources:
                 requests:
                   cpu: 100m
-                  memory: 1Gi
+                  memory: 128Mi
                 limits:
                   memory: 4Gi
           storageClass:
