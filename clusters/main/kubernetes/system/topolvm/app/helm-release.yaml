@@ -32,17 +32,13 @@ spec:
           value: /tmp
       # lvmd.deviceClasses -- Specify the device-class settings.
       deviceClasses:
-        - name: main
+        - name: thin
           volume-group: topolvm_all
-          default: false
-          spare-gb: 10
-        - name: "thin"
-          volume-group: "topolvm_all"
           type: thin
           default: true
-          thin-pool:
-            name: "pool0"
-            overprovision-ratio: 5.0
+          # thin-pool:
+          #   name: "pool0"
+          #   overprovision-ratio: 5.0
     node:
       lvmdEmbedded: true
 
