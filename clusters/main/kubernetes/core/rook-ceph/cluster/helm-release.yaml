@@ -33,13 +33,15 @@ spec:
         bdev_enable_discard = true
         bdev_async_discard = true
         osd_class_update_on_start = false
+        mon_warn_on_pool_no_redundancy = false
+        osd_pool_default_size = 1
       cephClusterSpec:
         mgr:
           count: 1
-          allowMultiplePerNode: false
+          allowMultiplePerNode: true
         mon:
           count: 1
-          allowMultiplePerNode: false
+          allowMultiplePerNode: true
         resources:
           mgr:
             requests:
@@ -100,15 +102,10 @@ spec:
           ssl: false
 
         storage:
-          useAllNodes: false
+          useAllNodes: true
           useAllDevices: true
           # when onlyApplyOSDPlacement is false, will merge both placement.All() and storageClassDeviceSets.Placement
           onlyApplyOSDPlacement: false
-          nodes:
-            - name: k8s-control-1
-              config:
-                deviceClass: nvme
-                osdsPerDevice: "1"
 
       ingress:
         dashboard:
