@@ -56,7 +56,7 @@ spec:
           containers:
             main:
               env:
-                # MINIO_ROOT_USER: "minio"
+                MINIO_ROOT_USER: "minio"
                 # MINIO_BROWSER_REDIRECT_URL: ""
                 # MINIO_SERVER_URL: ""
-                # MINIO_ROOT_PASSWORD: "changeme"
+                MINIO_ROOT_PASSWORD: "changeme"

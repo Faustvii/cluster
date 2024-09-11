@@ -110,7 +110,7 @@ spec:
             - name: k8s-control-1
               # deviceClass: nvme
               config:
-                osdsPerDevice: "2"
+                osdsPerDevice: "1"
 
       ingress:
         dashboard:
