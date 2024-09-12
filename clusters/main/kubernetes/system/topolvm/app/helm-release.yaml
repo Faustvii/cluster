@@ -25,6 +25,9 @@ spec:
       retries: 3
   values:
     # lvmd service
+    controller:
+      replicaCount: 1
+
     lvmd:
       managed: false
       env:
