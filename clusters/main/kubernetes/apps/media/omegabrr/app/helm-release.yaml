@@ -67,9 +67,9 @@ spec:
       config:
         enabled: true
         mountPath: /config
-        resources:
-          requests:
-            storage: 64Mi
+        # resources:
+        #   requests:
+        #     storage: 64Mi
         volsync:
           - name: backup
             type: restic
