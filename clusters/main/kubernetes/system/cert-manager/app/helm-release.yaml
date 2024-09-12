@@ -24,12 +24,11 @@ spec:
         remediation:
             retries: 3
     values:
-        cert-manager:
-            resources:
-                requests:
-                    memory: 100Mi
-                limits:
-                    memory: 512Mi
+        resources:
+            requests:
+                memory: 100Mi
+            limits:
+                memory: 512Mi
         # cainjector:
         #     resources:
         #         requests:
