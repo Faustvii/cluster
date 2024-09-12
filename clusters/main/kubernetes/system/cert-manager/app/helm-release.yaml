@@ -30,15 +30,15 @@ spec:
                     memory: 100Mi
                 limits:
                     memory: 512Mi
-        cainjector:
-            resources:
-                requests:
-                    memory: 100Mi
-                limits:
-                    memory: 512Mi
-        webhook:
-            resources:
-                requests:
-                    memory: 100Mi
-                limits:
-                    memory: 512Mi
+        # cainjector:
+        #     resources:
+        #         requests:
+        #             memory: 100Mi
+        #         limits:
+        #             memory: 512Mi
+        # webhook:
+        #     resources:
+        #         requests:
+        #             memory: 100Mi
+        #         limits:
+        #             memory: 512Mi
