@@ -15,3 +15,5 @@ resources:
   - volsync/ks.yaml
   - rook-ceph/ks.yaml
   - namespace.yaml
+  - lvm-disk-watcher/ks.yaml
+  - topolvm/ks.yaml
