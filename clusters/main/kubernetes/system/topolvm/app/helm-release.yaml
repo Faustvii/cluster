@@ -24,6 +24,12 @@ spec:
     remediation:
       retries: 3
   values:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 64Mi
+      limits:
+        memory: 512Mi
     # lvmd service
     controller:
       replicaCount: 1
