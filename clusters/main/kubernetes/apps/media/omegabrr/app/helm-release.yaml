@@ -67,17 +67,15 @@ spec:
       config:
         enabled: true
         mountPath: /config
-        # resources:
-        #   requests:
-        #     storage: 64Mi
+        size: 64Mi
         volsync:
           - name: backup
             type: restic
             credentials: s3
             dest:
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false
 
     # persistence:
     #   config:
