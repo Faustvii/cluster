@@ -5,4 +5,3 @@ resources:
   - clusterissuer/ks.yaml
   - traefik/ks.yaml
   - minio/ks.yaml
-  - rook-ceph/ks.yaml
