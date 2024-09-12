@@ -70,14 +70,14 @@ spec:
         resources:
           requests:
             storage: 64Mi
-        # volsync:
-        #   - name: backup
-        #     type: restic
-        #     credentials: s3
-        #     dest:
-        #       enabled: true
-        #     src:
-        #       enabled: true
+        volsync:
+          - name: backup
+            type: restic
+            credentials: s3
+            dest:
+              enabled: true
+            src:
+              enabled: true
 
     # persistence:
     #   config:
