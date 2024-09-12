@@ -24,25 +24,3 @@ spec:
         remediation:
             retries: 3
     values:
-      workload:
-        main:
-          podSpec:
-            certmanager-controller:
-              main:
-                resources:
-                  requests:
-                    memory: 100Mi
-                  limits:
-                    memory: 512Mi
-              # cainjector:
-              #     resources:
-              #         requests:
-              #             memory: 100Mi
-              #         limits:
-              #             memory: 512Mi
-              # webhook:
-              #     resources:
-              #         requests:
-              #             memory: 100Mi
-              #         limits:
-              #             memory: 512Mi
