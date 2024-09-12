@@ -18,6 +18,7 @@ cniConfig:
     name: none
 patches:
     - '@./clusters/${CLUSTERNAME}/talos/patches/all.yaml'
+    - '@./clusters/${CLUSTERNAME}/talos/patches/devicemapper.yaml'
 nodes:
     # We would adivce to always stick to a "k8s-something-1" style naming scheme
     - hostname: k8s-control-1
