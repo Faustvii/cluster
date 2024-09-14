@@ -34,7 +34,7 @@ spec:
     service:
       main:
         type: ExternalIP
-        externalIP: ${NFS_SERVER_IP}
+        externalIP: ${TRUENAS_IP}
         useSlice: false
         ports:
           main:
@@ -68,4 +68,5 @@ spec:
               type: "truenas"
               # url: "" - defaults to ingress host 0
               custom:
-                key: "hello"
+                key: ${TRUENAS_API_KEY}
+                enablePools: true
