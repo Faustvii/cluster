@@ -69,4 +69,4 @@ spec:
               # url: "" - defaults to ingress host 0
               custom:
                 key: ${TRUENAS_API_KEY}
-                enablePools: true
+                enablePools: "true"
