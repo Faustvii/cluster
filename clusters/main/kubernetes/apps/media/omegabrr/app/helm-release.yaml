@@ -74,8 +74,10 @@ spec:
             credentials: s3
             dest:
               enabled: false
+              cacheCapacity: 64Mi
             src:
               enabled: true
+              cacheCapacity: 64Mi
 
     # persistence:
     #   config:

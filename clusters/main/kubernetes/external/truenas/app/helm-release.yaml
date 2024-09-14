@@ -3,14 +3,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: minio
-  namespace: minio
+  name: truenas
+  namespace: external
 spec:
   interval: 15m
   chart:
     spec:
-      chart: minio
-      version: 13.4.5
+      chart: external-service
+      version: 15.1.9
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -31,15 +31,24 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    service:
+      main:
+        type: ExternalIP
+        externalIP: ${NFS_SERVER_IP}
+        useSlice: false
+        ports:
+          main:
+            protocol: http
+            port: 81
     ingress:
       main:
         enabled: true
         tls:
           - clusterCertificate: wildcard
             hosts:
-              - minio.${BASE_DOMAIN}
+              - nas.${BASE_DOMAIN}
         hosts:
-          - host: minio.${BASE_DOMAIN}
+          - host: nas.${BASE_DOMAIN}
             paths:
               - path: /
                 pathType: Prefix
@@ -49,12 +58,14 @@ spec:
             middlewares:
               - name: local
                 namespace: traefik
-
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                MINIO_ROOT_USER: "minio"
-                MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+          homepage:
+            enabled: true
+            name: "TrueNAS"
+            description: "TrueNAS Scale"
+            group: "Infra"
+            icon: "truenas-scale.png"
+            widget:
+              type: "truenas"
+              # url: "" - defaults to ingress host 0
+              custom:
+                key: "hello"
