@@ -68,5 +68,6 @@ spec:
               type: "truenas"
               # url: "" - defaults to ingress host 0
               custom:
+                ping: https://nas.${BASE_DOMAIN}
                 key: ${TRUENAS_API_KEY}
                 enablePools: "true"
