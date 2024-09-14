@@ -64,10 +64,10 @@ spec:
             description: "TrueNAS Scale"
             group: "Infra"
             icon: "truenas-scale.png"
+            ping: https://nas.${BASE_DOMAIN}
             widget:
               type: "truenas"
               # url: "" - defaults to ingress host 0
               custom:
-                ping: https://nas.${BASE_DOMAIN}
                 key: ${TRUENAS_API_KEY}
                 enablePools: "true"
