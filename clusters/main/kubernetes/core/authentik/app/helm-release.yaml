@@ -99,16 +99,16 @@ spec:
         frequency: 8
         accountID: ""
         licenseKey: ""
-      # outposts:
-      #   proxy:
-      #     enabled: true
-      #     token: ${AUTHPROX}
-      #   radius:
-      #     enabled: true
-      #     token: ${AUTHRAD}
-      #   ldap:
-      #     enabled: true
-      #     token: ${AUTHLDAP}
+      outposts:
+        proxy:
+          enabled: true
+          token: ${AUTHPROX}
+        radius:
+          enabled: true
+          token: ${AUTHRAD}
+        ldap:
+          enabled: true
+          token: ${AUTHLDAP}
     ingress:
       main:
         enabled: true
