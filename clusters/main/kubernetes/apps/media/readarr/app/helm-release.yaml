@@ -62,11 +62,11 @@ spec:
       books:
         enabled: true
         existingClaim: media-books-nfs-pvc
-        mountPath: "/media/books"
+        mountPath: /media/books
       downloads:
         enabled: true
         existingClaim: downloads-nfs-pvc
-        mountPath: "/downloads"
+        mountPath: /downloads
       # backup:
       #   enabled: true
       #   existingClaim: media-backups-pvc

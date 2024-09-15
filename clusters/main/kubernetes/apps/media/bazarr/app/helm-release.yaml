@@ -54,11 +54,11 @@ spec:
       series:
         enabled: true
         existingClaim: media-series-nfs-pvc
-        mountPath: "/media/series"
+        mountPath: /media/series
       movies:
         enabled: true
         existingClaim: media-movies-nfs-pvc
-        mountPath: "/media/movies"
+        mountPath: /media/movies
       # backup:
       #   enabled: true
       #   existingClaim: media-backups-pvc

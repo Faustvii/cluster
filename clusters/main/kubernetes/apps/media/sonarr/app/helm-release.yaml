@@ -62,11 +62,11 @@ spec:
       series:
         enabled: true
         existingClaim: media-series-nfs-pvc
-        mountPath: "/media/series"
+        mountPath: /media/series
       downloads:
         enabled: true
         existingClaim: downloads-nfs-pvc
-        mountPath: "/downloads"
+        mountPath: /downloads
       # backup:
       #   enabled: true
       #   existingClaim: media-backups-pvc

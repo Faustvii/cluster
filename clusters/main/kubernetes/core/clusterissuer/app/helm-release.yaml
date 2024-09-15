@@ -29,20 +29,19 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
     clusterIssuer:
       selfSigned:
         enabled: true
-        name: "selfsigned"
+        name: selfsigned
 
     clusterCertificates:
       # Namespaces in which the certificates must be available
       # Accepts comma-separated regex expressions
-      replicationNamespaces: '.*'
+      replicationNamespaces: .*
       certificates:
         - name: wildcard
           enabled: true
           certificateIssuer: selfsigned
           hosts:
             - faust.local
-            - '*.faust.local'
+            - "*.faust.local"

@@ -61,11 +61,11 @@ spec:
       movies:
         enabled: true
         existingClaim: media-movies-nfs-pvc
-        mountPath: "/media/movies"
+        mountPath: /media/movies
       downloads:
         enabled: true
         existingClaim: downloads-nfs-pvc
-        mountPath: "/downloads"
+        mountPath: /downloads
       # backup:
       #   enabled: true
       #   existingClaim: media-backups-pvc

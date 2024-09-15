@@ -36,7 +36,7 @@ spec:
           containers:
             main:
               env:
-                QBT_Preferences__WebUI__AuthSubnetWhitelist: "192.168.0.0/16, 172.16.0.0/12"
+                QBT_Preferences__WebUI__AuthSubnetWhitelist: 192.168.0.0/16, 172.16.0.0/12
                 QBT_Preferences__WebUI__AuthSubnetWhitelistEnabled: "true"
 
     # service:
@@ -66,23 +66,23 @@ spec:
       vpn:
         type: gluetun
         excludedNetworks_IPv4:
-          - "192.168.0.0/16"
+          - 192.168.0.0/16
         env:
-          VPN_TYPE: "wireguard"
+          VPN_TYPE: wireguard
           VPN_SERVICE_PROVIDER: ${VPN_SERVICE_PROVIDER}
           WIREGUARD_PRIVATE_KEY: ${WIREGUARD_PRIVATE_KEY}
           WIREGUARD_PRESHARED_KEY: ${WIREGUARD_PRESHARED_KEY}
           WIREGUARD_ADDRESSES: ${WIREGUARD_ADDRESSES}
           FIREWALL_VPN_INPUT_PORTS: ${FIREWALL_VPN_INPUT_PORTS}
           SERVER_COUNTRIES: ${SERVER_COUNTRIES}
-          FIREWALL_INPUT_PORTS: "10095,8000"
+          FIREWALL_INPUT_PORTS: 10095,8000
 
     persistence:
       config:
         type: emptyDir
       downloads:
         enabled: true
-        mountPath: "/downloads"
+        mountPath: /downloads
         type: nfs
         path: ${NFS_PATH_DOWNLOADS}
         server: ${NFS_SERVER_IP}

@@ -59,14 +59,13 @@ spec:
               - name: local
                 namespace: traefik
           homepage:
-            enabled: true
-            name: "TrueNAS"
-            description: "TrueNAS Scale"
-            group: "Infra"
-            icon: "truenas-scale.png"
-            ping: https://nas.${BASE_DOMAIN}
+            enabled: false
+            name: TrueNAS
+            description: TrueNAS Scale
+            group: Infra
+            icon: truenas-scale.png
             widget:
-              type: "truenas"
+              type: truenas
               # url: "" - defaults to ingress host 0
               custom:
                 key: ${TRUENAS_API_KEY}
