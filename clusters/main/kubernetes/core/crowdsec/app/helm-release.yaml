@@ -60,9 +60,9 @@ spec:
           enabled: true
     lapi:
       dashboard:
-        enabled: false
+        enabled: true
         ingress:
-          enabled: false
+          enabled: true
           annotations:
             cert-manager.io/cluster-issuer: selfsigned
             cert-manager.io/private-key-rotation-policy: Always

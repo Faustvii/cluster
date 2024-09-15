@@ -110,7 +110,7 @@ spec:
           enabled: true
           logLevel: INFO
           crowdsecMode: stream
-          crowdsecLapiHost: crowdsec-service.crowdsec:8080
+          crowdsecLapiHost: crowdsec-service.crowdsec.svc.cluster.local:8080
           forwardedHeadersTrustedIPs: []
           clientTrustedIPs:
             - 172.16.0.0/16
