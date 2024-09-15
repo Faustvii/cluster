@@ -103,7 +103,7 @@ spec:
         proxy:
           enabled: true
           token: ${AUTHPROX}
-          host: https://my.${BASE_DOMAIN}
+          host: http://authentik.authentik.svc.cluster.local:10229
           browserHost: https://my.${BASE_DOMAIN}
         radius:
           enabled: true
