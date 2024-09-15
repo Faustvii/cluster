@@ -65,7 +65,7 @@ spec:
         email: ${AUTHENTIKLOGIN}
         password: ${AUTHENTIKPASS}
         # Optional, only set if you want to use it
-        bootstrapToken: ""
+        bootstrapToken: ${AUTHPROX}
       general:
         disableUpdateCheck: true
         disableStartupAnalytics: true
@@ -101,14 +101,11 @@ spec:
         licenseKey: ""
       outposts:
         proxy:
-          enabled: false
-          token: ${AUTHPROX}
+          enabled: true
         radius:
-          enabled: false
-          token: ${AUTHRAD}
+          enabled: true
         ldap:
-          enabled: false
-          token: ${AUTHLDAP}
+          enabled: true
     ingress:
       main:
         enabled: true
