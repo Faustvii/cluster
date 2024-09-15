@@ -108,9 +108,9 @@ spec:
       bouncer:
         - name: bouncer
           enabled: true
-          logLevel: DEBUG
+          logLevel: INFO
           crowdsecLapiScheme: https
-          crowdsecMode: live
+          crowdsecMode: stream
           crowdsecLapiHost: crowdsec-service.crowdsec.svc.cluster.local:8080
           forwardedHeadersTrustedIPs: []
           clientTrustedIPs:
