@@ -42,23 +42,23 @@ spec:
 
     workload:
       main:
-        replicas: 2
+        replicas: 1
       worker:
-        replicas: 2
+        replicas: 1
       proxy:
-        replicas: 2
+        replicas: 1
       radius:
-        replicas: 2
+        replicas: 1
       ldap:
-        replicas: 2
+        replicas: 1
       geoip:
-        replicas: 2
+        replicas: 1
 
-    podOptions:
-      hostAliases:
-        hostnames:
-          - "auth.${BASE_DOMAIN}"
-          - "my.${BASE_DOMAIN}"
+    # podOptions:
+    #   hostAliases:
+    #     hostnames:
+    #       - "auth.${BASE_DOMAIN}"
+    #       - "my.${BASE_DOMAIN}"
     authentik:
       credentials:
         # Only works on initial install
