@@ -95,6 +95,8 @@ spec:
             middlewares:
               - name: local
                 namespace: traefik
+              - name: bouncer
+                namespace: traefik
 
     middlewares:
       ipWhiteList:
@@ -103,3 +105,17 @@ spec:
             - 172.16.0.0/16
             - 172.17.0.0/16
             - 192.168.1.0/24
+      bouncer:
+        - name: bouncer
+          enabled: true
+          logLevel: INFO
+          crowdsecMode: stream
+          crowdsecLapiHost: crowdsec-service.crowdsec:8080
+          forwardedHeadersTrustedIPs: []
+          clientTrustedIPs:
+            - 172.16.0.0/16
+            - 172.17.0.0/16
+            - 192.168.1.0/24
+          crowdsecLapiTLSCertificateAuthorityFile: /etc/traefik/crowdsec-certs/ca.crt
+          crowdsecLapiTLSCertificateBouncerFile: /etc/traefik/crowdsec-certs/tls.crt
+          crowdsecLapiTLSCertificateBouncerKeyFile: /etc/traefik/crowdsec-certs/tls.key
