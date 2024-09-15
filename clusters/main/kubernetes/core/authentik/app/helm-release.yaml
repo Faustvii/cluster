@@ -101,13 +101,13 @@ spec:
         licenseKey: ""
       outposts:
         proxy:
-          enabled: true
+          enabled: false
           token: ${AUTHPROX}
         radius:
-          enabled: true
+          enabled: false
           token: ${AUTHRAD}
         ldap:
-          enabled: true
+          enabled: false
           token: ${AUTHLDAP}
     ingress:
       main:
