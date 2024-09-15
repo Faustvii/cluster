@@ -73,12 +73,8 @@ spec:
             type: restic
             credentials: s3
             dest:
-              enabled: false
+              enabled: true
               cacheCapacity: 64Mi
             src:
               enabled: true
               cacheCapacity: 64Mi
-
-    # persistence:
-    #   config:
-    #     mountPath: /config
