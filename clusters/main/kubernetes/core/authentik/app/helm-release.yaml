@@ -166,8 +166,6 @@ spec:
 
     persistence:
       media:
-        accessModes:
-          - ReadWriteMany
         volsync:
           - name: b2-media
             type: restic
@@ -177,8 +175,6 @@ spec:
             src:
               enabled: true
       templates:
-        accessModes:
-          - ReadWriteMany
         volsync:
           - name: b2-templates
             type: restic
@@ -188,8 +184,6 @@ spec:
             src:
               enabled: true
       blueprints:
-        accessModes:
-          - ReadWriteMany
         volsync:
           - name: b2-blueprints
             type: restic
@@ -199,8 +193,6 @@ spec:
             src:
               enabled: true
       certs:
-        accessModes:
-          - ReadWriteMany
         volsync:
           - name: b2-certs
             type: restic
@@ -210,8 +202,6 @@ spec:
             src:
               enabled: true
       geoip:
-        accessModes:
-          - ReadWriteMany
         volsync:
           - name: b2-geoip
             type: restic
