@@ -120,3 +120,21 @@ spec:
           crowdsecLapiTLSCertificateAuthorityFile: /etc/traefik/crowdsec-certs/ca.crt
           crowdsecLapiTLSCertificateBouncerFile: /etc/traefik/crowdsec-certs/tls.crt
           crowdsecLapiTLSCertificateBouncerKeyFile: /etc/traefik/crowdsec-certs/tls.key
+      forwardAuth:
+        - name: auth
+          address: https://authentik-proxy.authentik.svc.cluster.local:10228/outpost.goauthentik.io/auth/traefik
+          authResponseHeaders:
+            - X-authentik-username
+            - X-authentik-groups
+            - X-authentik-email
+            - X-authentik-name
+            - X-authentik-uid
+            - X-authentik-jwt
+            - X-authentik-meta-jwks
+            - X-authentik-meta-outpost
+            - X-authentik-meta-provider
+            - X-authentik-meta-app
+            - X-authentik-meta-version
+          trustForwardHeader: true
+          tls:
+            insecureSkipVerify: true
