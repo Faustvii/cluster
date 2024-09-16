@@ -54,11 +54,12 @@ spec:
       geoip:
         replicas: 1
 
-    # podOptions:
-    #   hostAliases:
-    #     hostnames:
-    #       - "auth.${BASE_DOMAIN}"
-    #       - "my.${BASE_DOMAIN}"
+    podOptions:
+      hostAliases:
+        ip: ${TRAEFIK_IP}
+        hostnames:
+          - "auth.${BASE_DOMAIN}"
+          - "my.${BASE_DOMAIN}"
     authentik:
       credentials:
         # Only works on initial install
@@ -102,10 +103,13 @@ spec:
       outposts:
         proxy:
           enabled: true
+          token: ${AUTHPROX}
         radius:
           enabled: true
+          token: ${AUTHPROX}
         ldap:
           enabled: true
+          token: ${AUTHPROX}
     ingress:
       main:
         enabled: true
