@@ -7,4 +7,4 @@ resources:
   - minio/ks.yaml
   - traefik/ks.yaml
   - blocky/ks.yaml
-  # - authentik/ks.yaml
+  - authentik/ks.yaml
