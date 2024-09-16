@@ -104,8 +104,8 @@ spec:
         proxy:
           enabled: true
           token: ${AUTHPROX}
-          host: https://my.${BASE_DOMAIN2}
-          browserHost: https://my.${BASE_DOMAIN2}
+          host: https://my.${BASE_DOMAIN}
+          browserHost: https://my.${BASE_DOMAIN}
         radius:
           enabled: false
           token: ${AUTHPROX}
