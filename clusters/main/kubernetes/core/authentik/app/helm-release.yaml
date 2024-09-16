@@ -105,10 +105,10 @@ spec:
           enabled: true
           token: ${AUTHPROX}
         radius:
-          enabled: true
+          enabled: false
           token: ${AUTHPROX}
         ldap:
-          enabled: true
+          enabled: false
           token: ${AUTHPROX}
     ingress:
       main:
