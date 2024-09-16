@@ -56,10 +56,10 @@ spec:
 
     podOptions:
       hostAliases:
-        ip: ${TRAEFIK_IP}
-        hostnames:
-          - "auth.${BASE_DOMAIN}"
-          - "my.${BASE_DOMAIN}"
+        - ip: ${TRAEFIK_IP}
+          hostnames:
+            - "auth.${BASE_DOMAIN}"
+            - "my.${BASE_DOMAIN}"
     authentik:
       credentials:
         # Only works on initial install
