@@ -55,6 +55,10 @@ spec:
             middlewares:
               - name: local
                 namespace: traefik
+              - name: bouncer
+                namespace: traefik
+              - name: auth
+                namespace: traefik
 
     persistence:
       config:
