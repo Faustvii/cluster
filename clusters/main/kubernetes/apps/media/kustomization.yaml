@@ -18,3 +18,5 @@ resources:
   - tautulli/ks.yaml
   - unpackerr/ks.yaml
   - omegabrr/ks.yaml
+  - sonarr-anime/ks.yaml
+  - calibre-web/ks.yaml
