@@ -1,11 +1,11 @@
 ---
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: "Tests"
+name: Tests
 
 on:
   pull_request:
-    branches: ["main"]
-    paths: ["clusters/**"]
+    branches: [main]
+    paths: [clusters/**]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
@@ -32,7 +32,6 @@ jobs:
         shell: bash
         run: bash ./.github/scripts/kubeconform.sh ${{ env.KUBERNETES_DIR }}
 
-
   flux-diff:
     name: Flux Diff
     runs-on: ubuntu-latest
@@ -41,48 +40,37 @@ jobs:
       pull-requests: write
     strategy:
       matrix:
-        paths: ["clusters"]
-        resources: ["kustomization"]
+        cluster_path:
+          - clusters/main/kubernetes
+        resource:
+          - kustomization
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: pull
 
-      - name: Checkout Default Branch
-        uses: actions/checkout@v4
-        with:
-          ref: "${{ github.event.repository.default_branch }}"
-          path: default
+      - name: Setup Flux CLI
+        uses: fluxcd/flux2/action@v2.3.0
+
+      - name: Setup Kustomize
+        uses: syntaqx/setup-kustomize@v1
+
+      - run: kustomize version
 
       - name: Diff Resources
-        uses: docker://ghcr.io/allenporter/flux-local:main
-        with:
-          args: >-
-            diff ${{ matrix.resources }}
-            --unified 6
-            --path /github/workspace/pull/${{ matrix.paths }}/main/kubernetes
-            --path-orig /github/workspace/default/${{ matrix.paths }}/main/kubernetes
-            --strip-attrs "helm.sh/chart,checksum/config,app.kubernetes.io/version,chart"
-            --limit-bytes 10000
-            --all-namespaces
-            --sources "flux-system"
-            --output-file diff.patch
-
-      - name: Generate Diff
+        uses: allenporter/flux-local/action/diff@4.3.1
         id: diff
-        run: |
-          cat diff.patch
-          echo "diff<<EOF" >> $GITHUB_OUTPUT
-          cat diff.patch >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+        with:
+          path: ${{ matrix.cluster_path }}
+          resource: ${{ matrix.resource }}
+          sources: cluster=${{matrix.cluster_path}},flux-system
 
       - if: ${{ steps.diff.outputs.diff != '' }}
         name: Add comment
         uses: mshick/add-pr-comment@v2
         with:
-          message-id: "${{ github.event.pull_request.number }}/${{ matrix.paths }}/${{ matrix.resources }}"
+          message-id: "${{ github.event.pull_request.number }}/${{ matrix.cluster_path }}/${{ matrix.resource }}"
           message-failure: Diff was not successful
           message: |
-            ```diff
+            `````diff
             ${{ steps.diff.outputs.diff }}
+            `
