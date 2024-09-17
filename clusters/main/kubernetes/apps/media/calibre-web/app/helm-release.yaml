@@ -54,8 +54,8 @@ spec:
             enabled: true
             forceTLS: false
             allowCors: true
-            entrypoints:
-              - web
+            # entrypoints:
+            #   - web
             middlewares:
               - name: local
                 namespace: traefik
