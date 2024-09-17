@@ -38,7 +38,9 @@ spec:
         enabled: false
 
     traefik:
-      enableFixedMiddlewares: false
+      fixedMiddleWares:
+        - name: basic-ratelimit
+          namespace: traefik
 
     ingress:
       main:
