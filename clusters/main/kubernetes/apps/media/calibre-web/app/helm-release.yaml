@@ -37,6 +37,9 @@ spec:
       main:
         enabled: false
 
+    traefik:
+      enableFixedMiddlewares: false
+
     ingress:
       main:
         enabled: true
@@ -52,8 +55,6 @@ spec:
         integrations:
           traefik:
             enabled: true
-            forceTLS: false
-            allowCors: true
             # entrypoints:
             #   - web
             middlewares:
