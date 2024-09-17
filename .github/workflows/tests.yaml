@@ -5,7 +5,7 @@ name: Tests
 on:
   pull_request:
     branches: [main]
-    paths: [clusters/**]
+    paths: [clusters/**, .github/workflows/tests.yaml]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
