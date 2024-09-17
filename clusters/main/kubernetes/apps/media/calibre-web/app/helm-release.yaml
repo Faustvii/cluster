@@ -55,12 +55,12 @@ spec:
             middlewares:
               - name: local
                 namespace: traefik
-              - name: bouncer
-                namespace: traefik
-              - name: auth
-                namespace: traefik
-              - name: x-scheme-https
-                namespace: traefik
+              # - name: bouncer
+              #   namespace: traefik
+              # - name: auth
+              #   namespace: traefik
+              # - name: x-scheme-https
+              #   namespace: traefik
 
     persistence:
       config:
