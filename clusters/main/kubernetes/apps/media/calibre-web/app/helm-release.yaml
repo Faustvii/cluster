@@ -37,11 +37,6 @@ spec:
       main:
         enabled: false
 
-    traefik:
-      fixedMiddleWares:
-        - name: basic-ratelimit
-          namespace: traefik
-
     ingress:
       main:
         enabled: true
@@ -57,8 +52,11 @@ spec:
         integrations:
           traefik:
             enabled: true
-            # entrypoints:
-            #   - web
+            fixedMiddlewares:
+              - name: basic-ratelimit
+                namespace: traefik
+              - name: basic-secure-headers
+                namespace: traefik
             middlewares:
               - name: local
                 namespace: traefik
