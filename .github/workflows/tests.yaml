@@ -5,7 +5,7 @@ name: Tests
 on:
   pull_request:
     branches: [main]
-    paths: [clusters/**]
+    paths: [clusters/**, .github/workflows/tests.yaml]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
@@ -57,7 +57,7 @@ jobs:
       - run: kustomize version
 
       - name: Diff Resources
-        uses: allenporter/flux-local/action/diff@4.3.1
+        uses: allenporter/flux-local/action/diff@5.5.1
         id: diff
         with:
           path: ${{ matrix.cluster_path }}
