@@ -17,7 +17,6 @@ spec:
   mountOptions:
     - nfsvers=4
     - tcp
-    - intr
     - hard
     - noresvport
     - noatime
@@ -55,7 +54,6 @@ spec:
   mountOptions:
     - nfsvers=4
     - tcp
-    - intr
     - hard
     - noresvport
     - noatime
@@ -93,7 +91,6 @@ spec:
   mountOptions:
     - nfsvers=4
     - tcp
-    - intr
     - hard
     - noresvport
     - noatime
@@ -131,7 +128,6 @@ spec:
   mountOptions:
     - nfsvers=4
     - tcp
-    - intr
     - hard
     - noresvport
     - noatime
@@ -169,7 +165,6 @@ spec:
   mountOptions:
     - nfsvers=4
     - tcp
-    - intr
     - hard
     - noresvport
     - noatime
