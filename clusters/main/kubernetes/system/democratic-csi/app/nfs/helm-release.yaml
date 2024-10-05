@@ -1,0 +1,147 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: democratic-nfs
+  namespace: storage
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: democratic-csi
+      sourceRef:
+        kind: HelmRepository
+        name: democratic-csi
+        namespace: flux-system
+  values:
+    controller:
+      externalAttacher:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50M
+            ephemeral-storage: 1Gi
+          limits:
+            memory: 100Mi
+            ephemeral-storage: 5Gi
+      externalProvisioner:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50M
+            ephemeral-storage: 1Gi
+          limits:
+            memory: 100M
+            ephemeral-storage: 5Gi
+      externalResizer:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+            ephemeral-storage: 1Gi
+          limits:
+            memory: 100Mi
+            ephemeral-storage: 5Gi
+      externalSnapshotter:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 30Mi
+            ephemeral-storage: 1Gi
+          limits:
+            memory: 100Mi
+            ephemeral-storage: 5Gi
+      driver:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
+            ephemeral-storage: 1Gi
+          limits:
+            memory: 100Mi
+            ephemeral-storage: 2Gi
+    csiProxy:
+      resources:
+        requests:
+          cpu: 10m
+          memory: 100Mi
+          ephemeral-storage: 1Gi
+        limits:
+          memory: 100Mi
+          ephemeral-storage: 5Gi
+    csiDriver:
+      name: nfs
+    storageClasses:
+      - name: nfs
+        defaultClass: true
+        reclaimPolicy: Delete
+        volumeBindingMode: Immediate
+        allowVolumeExpansion: true
+        parameters:
+          fsType: nfs
+          detachedVolumesFromSnapshots: "false"
+        secrets:
+          provisioner-secret:
+          controller-publish-secret:
+          node-stage-secret:
+          node-publish-secret:
+          controller-expand-secret:
+    volumeSnapshotClasses:
+      - name: nfs-snapshot
+        parameters:
+          detachedSnapshots: "true"
+    driver:
+      config:
+        driver: freenas-api-nfs
+        instance_id:
+        httpConnection:
+          protocol: http
+          host: ${TRUENAS_IP}
+          port: ${TRUENAS_API_PORT}
+          allowInsecure: true
+          apiKey: ${TRUENAS_API_KEY}
+        zfs:
+          datasetParentName: ${NFS_ZFS_DATASET_PARENT_NAME}
+          detachedSnapshotsDatasetParentName: ${NFS_ZFS_SNAPSHOT_DATASET_PARENT_NAME}
+          datasetEnableQuotas: true
+          datasetEnableReservation: false
+          datasetPermissionsMode: "0770"
+          datasetPermissionsUser: 0
+          datasetPermissionsGroup: 0
+        nfs:
+          shareHost: ${TRUENAS_IP}
+          shareAlldirs: false
+          shareAllowedHosts: []
+          shareAllowedNetworks: []
+          shareMaprootUser: root
+          shareMaprootGroup: root
+          shareMapallUser: ""
+          shareMapallGroup: ""
+    node:
+      driver:
+        resources:
+          requests:
+            cpu: 30m
+            memory: 100Mi
+            ephemeral-storage: 1Gi
+          limits:
+            memory: 200Mi
+            ephemeral-storage: 5Gi
+      driverRegistrar:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 100Mi
+            ephemeral-storage: 1Gi
+          limits:
+            memory: 200Mi
+            ephemeral-storage: 5Gi
+      cleanup:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 100Mi
+            ephemeral-storage: 1Gi
+          limits:
+            memory: 200Mi
+            ephemeral-storage: 5Gi
+      kubeletHostPath: /var/lib/k0s/kubelet

@@ -10,3 +10,4 @@ resources:
   - topolvm.yaml
   - truecharts.yaml
   - weave-gitops.yaml
+  - democratic-csi.yaml

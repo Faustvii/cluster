@@ -16,3 +16,4 @@ resources:
   - namespace.yaml
   - lvm-disk-watcher/ks.yaml
   - topolvm/ks.yaml
+  - democratic-csi/ks.yaml
