@@ -92,37 +92,37 @@ spec:
           detachedSnapshots: "true"
     driver:
       config:
-      driver: freenas-api-iscsi
-      instance_id:
-      httpConnection:
-        protocol: http
-        host: ${TRUENAS_IP}
-        port: ${TRUENAS_API_PORT}
-        allowInsecure: true
-        apiKey: ${TRUENAS_API_KEY}
-      zfs:
-        datasetParentName: ${ISCSI_ZFS_DATASET_PARENT_NAME}
-        detachedSnapshotsDatasetParentName: ${ISCSI_ZFS_SNAPSHOT_DATASET_PARENT_NAME}
-        zvolCompression:
-        zvolDedup:
-        zvolEnableReservation: false
-        zvolBlocksize:
-      iscsi:
-        targetPortal: "${TRUENAS_IP}:3260"
-        interface:
-        namePrefix: csi-
-        nameSuffix: -talos
-        targetGroups:
-          - targetGroupPortalGroup: 1
-            targetGroupInitiatorGroup: 1
-            targetGroupAuthType: None
-            targetGroupAuthGroup:
-        extentInsecureTpc: true
-        extentXenCompat: false
-        extentDisablePhysicalBlocksize: true
-        extentBlocksize: 512
-        extentRpm: SSD
-        extentAvailThreshold: 0
+        driver: freenas-api-iscsi
+        instance_id:
+        httpConnection:
+          protocol: http
+          host: ${TRUENAS_IP}
+          port: ${TRUENAS_API_PORT}
+          allowInsecure: true
+          apiKey: ${TRUENAS_API_KEY}
+        zfs:
+          datasetParentName: ${ISCSI_ZFS_DATASET_PARENT_NAME}
+          detachedSnapshotsDatasetParentName: ${ISCSI_ZFS_SNAPSHOT_DATASET_PARENT_NAME}
+          zvolCompression:
+          zvolDedup:
+          zvolEnableReservation: false
+          zvolBlocksize:
+        iscsi:
+          targetPortal: "${TRUENAS_IP}:3260"
+          interface:
+          namePrefix: csi-
+          nameSuffix: -talos
+          targetGroups:
+            - targetGroupPortalGroup: 1
+              targetGroupInitiatorGroup: 1
+              targetGroupAuthType: None
+              targetGroupAuthGroup:
+          extentInsecureTpc: true
+          extentXenCompat: false
+          extentDisablePhysicalBlocksize: true
+          extentBlocksize: 512
+          extentRpm: SSD
+          extentAvailThreshold: 0
     node:
       driver:
         resources:
