@@ -7,6 +7,7 @@ resources:
   - autobrr/ks.yaml
   - plex/ks.yaml
   - qbittorrent/ks.yaml
+  - qbithelper/ks.yaml
   - radarr/ks.yaml
   - bazarr/ks.yaml
   - flaresolverr/ks.yaml
