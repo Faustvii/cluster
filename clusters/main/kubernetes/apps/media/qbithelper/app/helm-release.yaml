@@ -33,4 +33,4 @@ spec:
     image:
       repository: ghcr.io/faustvii/qbithelper
       pullPolicy: IfNotPresent
-      tag: 1.6.0
+      tag: 1.6.2
