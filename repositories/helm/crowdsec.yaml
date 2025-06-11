@@ -1,11 +1,9 @@
----
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/source.toolkit.fluxcd.io/helmrepository_v1.json
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: bjw-s
+  name: crowdsec
   namespace: flux-system
 spec:
-  type: oci
-  interval: 5m
-  url: oci://ghcr.io/bjw-s-labs/helm
+  interval: 1h
+  url: https://crowdsecurity.github.io/helm-charts

@@ -10,8 +10,6 @@ spec:
   url: https://github.com/truecharts/public/
   ref:
     branch: master
-  secretRef:
-    name: deploy-key
   ignore: |
     # exclude all
     /*
