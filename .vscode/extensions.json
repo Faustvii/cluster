@@ -1,7 +1,0 @@
-{
-    "recommendations": [
-        "redhat.vscode-yaml",
-        "usernamehw.errorlens",
-        "ms-kubernetes-tools.vscode-kubernetes-tools"
-    ]
-}
