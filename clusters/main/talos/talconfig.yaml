@@ -55,7 +55,6 @@ controlPlane:
                 officialExtensions:
                     - siderolabs/util-linux-tools
                     - siderolabs/iscsi-tools
-                    - siderolabs/qemu-guest-agent
     machineFiles:
     - content: |
         [plugins."io.containerd.cri.v1.images"]
@@ -86,7 +85,6 @@ worker:
                 officialExtensions:
                     - siderolabs/util-linux-tools
                     - siderolabs/iscsi-tools
-                    - siderolabs/qemu-guest-agent
     machineFiles:
     - content: |
         [plugins."io.containerd.cri.v1.images"]
