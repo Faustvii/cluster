@@ -35,23 +35,23 @@ spec:
         enabled: true
         name: "selfsigned"
       ## Remove these if you do NOT want to use clusterissuer
-      ACME:
-        - name: domain-0-le-staging
-          # Used for both logging in to the DNS provider AND ACME registration
-          email: "${DOMAIN_0_EMAIL}"
-          server: 'https://acme-staging-v02.api.letsencrypt.org/directory'
-          # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns, webhook
-          type: "cloudflare"
-          # for cloudflare
-          cfapitoken: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
-        - name: domain-0-le-prod
-          # Used for both logging in to the DNS provider AND ACME registration
-          email: "${DOMAIN_0_EMAIL}"
-          server: 'https://acme-v02.api.letsencrypt.org/directory'
-          # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns, webhook
-          type: "cloudflare"
-          # for cloudflare
-          cfapitoken: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
+      # ACME:
+      #   - name: domain-0-le-staging
+      #     # Used for both logging in to the DNS provider AND ACME registration
+      #     email: "${DOMAIN_0_EMAIL}"
+      #     server: 'https://acme-staging-v02.api.letsencrypt.org/directory'
+      #     # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns, webhook
+      #     type: "cloudflare"
+      #     # for cloudflare
+      #     cfapitoken: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
+      #   - name: domain-0-le-prod
+      #     # Used for both logging in to the DNS provider AND ACME registration
+      #     email: "${DOMAIN_0_EMAIL}"
+      #     server: 'https://acme-v02.api.letsencrypt.org/directory'
+      #     # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns, webhook
+      #     type: "cloudflare"
+      #     # for cloudflare
+      #     cfapitoken: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
 
     ## Remove these if you do NOT want to use clusterissuer
     clusterCertificates:
@@ -61,7 +61,7 @@ spec:
       certificates:
         - name: domain-0-wildcard
           enabled: true
-          certificateIssuer: domain-0-le-prod
+          certificateIssuer: selfsigned
           hosts:
             - ${DOMAIN_0}
             - '*.${DOMAIN_0}'
