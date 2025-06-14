@@ -42,7 +42,7 @@ spec:
 
     resources:
       requests:
-        memory: 2Gi
+        memory: 100Mi
       limits:
         memory: 6Gi
         cpu: 4000m
@@ -69,13 +69,13 @@ spec:
 
     persistence:
       webui:
-        enabled: true
+        enabled: false
         mountPath: /mnt
         type: nfs
         path: ${NFS_PATH_K8S}
         server: ${NFS_SERVER_IP}
       downloads:
-        enabled: true
+        enabled: false
         mountPath: /downloads
         type: nfs
         path: ${NFS_PATH_DOWNLOADS}
