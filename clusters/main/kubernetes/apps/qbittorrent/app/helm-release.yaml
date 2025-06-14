@@ -46,7 +46,6 @@ spec:
       limits:
         memory: 6Gi
         cpu: 4000m
-    workload:
 
     ingress:
       main:
