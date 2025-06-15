@@ -6,22 +6,22 @@ metadata:
 spec:
   allowScheduling: true
   disks:
-    default-disk-fd0600000000:
+    premium-tier:
       allowScheduling: true
       diskDriver: ""
       diskType: filesystem
       evictionRequested: false
-      path: /var/lib/longhorn/
+      path: /var/lib/longhorn/premium
       storageReserved: 82044861235
       tags:
         - nvme
 
-    ssd-disk-longhorn:
+    standard-tier:
       allowScheduling: true
       diskDriver: ""
-      diskType: block
+      diskType: filesystem
       evictionRequested: false
-      path: /dev/sdb
+      path: /var/lib/longhorn/standard
       tags:
         - ssd
 
