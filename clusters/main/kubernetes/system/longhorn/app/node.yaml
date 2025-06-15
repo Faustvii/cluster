@@ -12,7 +12,6 @@ spec:
       diskType: filesystem
       evictionRequested: false
       path: /var/lib/longhorn-data/premium
-      storageReserved: 82044861235
       tags:
         - nvme
 
