@@ -11,7 +11,7 @@ spec:
       diskDriver: ""
       diskType: filesystem
       evictionRequested: false
-      path: /var/lib/longhorn/premium
+      path: /var/lib/longhorn-data/premium
       storageReserved: 82044861235
       tags:
         - nvme
@@ -21,7 +21,7 @@ spec:
       diskDriver: ""
       diskType: filesystem
       evictionRequested: false
-      path: /var/lib/longhorn/standard
+      path: /var/lib/longhorn-data/standard
       tags:
         - ssd
 
