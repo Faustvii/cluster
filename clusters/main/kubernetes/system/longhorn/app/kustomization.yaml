@@ -4,3 +4,6 @@ resources:
   - namespace.yaml
   - helm-release.yaml
   - volumeSnapshotClass.yaml
+  - node.yaml
+  - standard-storageclass.yaml
+  - premium-storageclass.yaml
