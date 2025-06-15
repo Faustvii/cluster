@@ -68,6 +68,8 @@ spec:
             group: Infra
 
     persistence:
+      config:
+        type: emptyDir
       webui:
         enabled: false
         mountPath: /mnt
