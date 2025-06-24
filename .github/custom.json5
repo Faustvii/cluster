@@ -1,0 +1,60 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "major": {
+    "enabled": true,
+    "automerge": false,
+    "dependencyDashboardApproval": false
+  },
+  "assignees": [
+    "faustvii"
+  ],
+  "ignore": [],
+  "helm-values": {
+    "ignorePaths": [
+      "**/helm-release.yaml"
+    ]
+  },
+  "packageRules": [
+    {
+      "description": [
+        "Block automerge for Kubelet and Talos version Major"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "dependencyDashboardApproval": false,
+      "matchPackageNames": [
+        "ghcr.io/siderolabs/kubelet",
+        "ghcr.io/siderolabs/installer"
+      ],
+      "labels": [
+        "type/major",
+        "system-upgrade"
+      ]
+    },
+    {
+      "description": [
+        "Block automerge for any version"
+      ],
+      "matchPackagePatterns": [
+        "qbittorrent",
+        "crafty-4",
+        "znc"
+      ],
+      "matchDataSources": [
+        "docker",
+        "helm"
+      ],
+      "automerge": false,
+      "labels": [
+        "manual"
+      ]
+    },
+    {
+      "description": "custom version parsing for calibre-web-automated",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["docker.io/crocodilestick/calibre-web-automated"],
+      "versioning": "regex:^V?(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
+    }
+  ]
+}
