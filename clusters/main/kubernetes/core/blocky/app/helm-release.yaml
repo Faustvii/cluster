@@ -57,7 +57,7 @@ spec:
           - name: tls_servername
             value: cloudflare-dns.com
 
-    # CANNOT be defined in above yaml section
+    # CANNOT be defined in above yaml section - hippiti hoppity hop
     queryLog:
       # optional one of: mysql, postgresql, csv, csv-client. If empty, log to console only
       type: ""
