@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Setup Homebrew
         uses: Homebrew/actions/setup-homebrew@master
@@ -46,18 +46,18 @@ jobs:
           - kustomization
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Setup Flux CLI
         uses: fluxcd/flux2/action@v2.6.2
 
       - name: Setup Kustomize
-        uses: syntaqx/setup-kustomize@v1
+        uses: syntaqx/setup-kustomize@4331ea02eec887906c9adbf7f431ca3db09908fd # v1
 
       - run: kustomize version
 
       - name: Diff Resources
-        uses: allenporter/flux-local/action/diff@6.1.1
+        uses: allenporter/flux-local/action/diff@8c41682a7ef704f883d800a8676a68f1da038689 # 6.1.1
         id: diff
         with:
           path: ${{ matrix.cluster_path }}
@@ -66,7 +66,7 @@ jobs:
 
       - if: ${{ steps.diff.outputs.diff != '' }}
         name: Add comment
-        uses: mshick/add-pr-comment@v2
+        uses: mshick/add-pr-comment@b8f338c590a895d50bcbfa6c5859251edc8952fc # v2
         with:
           message-id: "${{ github.event.pull_request.number }}/${{ matrix.cluster_path }}/${{ matrix.resource }}"
           message-failure: Diff was not successful
